@@ -122,3 +122,13 @@ function handleMouseLeave(_e: MouseEvent) {
 function lerp(a: number, b: number, t: number) {
   return a * (1 - t) + b * t;
 }
+
+document.addEventListener("visibilitychange", function () {
+  if (document.hidden) {
+      // Pause the animation loop when the tab is out of focus
+      renderer.setAnimationLoop(null);  // Removes the loop
+  } else {
+      // Resume the animation loop when the tab comes back into focus
+      renderer.setAnimationLoop(animate);  // Sets the loop again
+  }
+});
