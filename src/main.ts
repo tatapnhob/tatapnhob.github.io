@@ -10,7 +10,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </div>
     <nav>
       <ul>
-        <li><a href="#">about</a></li>
+        <li><a href="">about</a></li>
         <li><a href="#">projects</a></li>
         <li><a href="#">gallery</a></li>
         <li><a href="#">cv</a></li>
