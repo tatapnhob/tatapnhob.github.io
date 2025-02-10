@@ -221,8 +221,6 @@ function handleMouseDown(e: MouseEvent) {
 
   let origin_x = canvas.getBoundingClientRect().x + canvas.getBoundingClientRect().width / 2
   let origin_y = canvas.getBoundingClientRect().y + canvas.getBoundingClientRect().height / 2
-
-  e.preventDefault();
   
   var x = (e.clientX - origin_x) / canvas.getBoundingClientRect().width * 2
   var y = - (e.clientY - origin_y) / canvas.getBoundingClientRect().height * 2
@@ -236,8 +234,8 @@ function handleMouseDown(e: MouseEvent) {
   raycaster.setFromCamera(vector, camera);
 	const intersects = raycaster.intersectObjects( scene.children );
 
-  for (let i = 0; i < intersects.length; i++) {
-    intersects[i].object.rotation.y = Math.PI
+  if (intersects.length > 0) {
+    intersects[0].object.rotation.y = Math.PI
   }
 
 }
