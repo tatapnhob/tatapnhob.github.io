@@ -203,20 +203,24 @@ nav > ul {
     & > li > a {
       transition: transform .6s linear(0, 0.115 2.2%, 0.877 9.4%, 1.016 11.9%, 1.081 14.7%, 1.088 16%, 1.084 17.5%, 1.013 25.3%, 0.993 30.8%, 1.001 46.8%, 1);
     }
-    &:hover > li:not(:hover) {
+    &:hover > li:not(:hover):not(:focus-within),
+    &:focus-within > li:not(:focus-within):not(:hover) {
       opacity: .25;
     }
-    &:hover > li:hover a::before {
+    &:hover > li:hover a::before,
+    &:focus-within > li:focus-within a::before {
       opacity: 1;
       display: block;
       animation: none;
     }
     
-    &:hover > li.highlighted::before {
+    &:hover > li.highlighted::before,
+    &:focus-within > li.highlighted::before {
       display: none;
     }
     
-    &:hover > li:hover a {
+    &:hover > li:hover a,
+    &:focus-within > li:focus-within a {
       font-weight: bold;
       display: block;
       transform: translateX(2rem);
@@ -315,4 +319,8 @@ nav > ul {
   color:white;
   padding-inline: 4rem;
   padding-block: 1rem;
+}
+
+nav > ul > li > a:active {
+  background-color: red;
 }
