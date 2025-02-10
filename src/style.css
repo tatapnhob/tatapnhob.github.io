@@ -275,6 +275,7 @@ nav > ul {
       transparent 80%
     );
   overflow: hidden;
+  opacity: 0;
   transition: opacity 1s;
 }
 
