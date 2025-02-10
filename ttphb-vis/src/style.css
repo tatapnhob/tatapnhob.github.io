@@ -257,4 +257,11 @@ nav > ul {
     max-width: 500px;
     margin-inline: 2rem;
   }
+
+  #logo {
+    width: 80%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
 }
