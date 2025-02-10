@@ -61,6 +61,9 @@ const light1 = new THREE.PointLight( 0xffffffff, 4, 100 );
 light1.position.set( -2, -2, 2 );
 scene.add( light1 );
 
+// const ambient_light = new THREE.AmbientLight(0xffffff, 1)
+// scene.add(ambient_light)
+
 const clock = new THREE.Clock();
 
 const loader = new GLTFLoader();
@@ -128,8 +131,19 @@ function handleMouseMove(e: MouseEvent) {
   
     var parallax_intensity: number = 0.2;
   
-    var t_x = (x - window.innerWidth / 2) / window.innerWidth;
-    var t_y = (y - window.innerHeight / 2) / window.innerHeight;
+    let container = document.getElementById("logo-container");
+
+    if (container == null) return;
+
+    let canvas = container.getElementsByTagName("canvas")[0];
+
+    if (canvas == null) return;
+
+    let origin_x = canvas.getBoundingClientRect().x + canvas.getBoundingClientRect().width / 2
+    let origin_y = canvas.getBoundingClientRect().y + canvas.getBoundingClientRect().height / 2
+    
+    var t_x = (e.clientX - origin_x) / window.innerWidth * 2
+    var t_y = - (e.clientY - origin_y) / window.innerHeight * 2
   
     offset_x = parallax_intensity * t_x;
     offset_y = parallax_intensity * t_y;
