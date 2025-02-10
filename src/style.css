@@ -296,6 +296,10 @@ nav > ul {
     padding-inline: .5rem !important;
   }
 
+  #app {
+    background-size: 20px 20px;
+  }
+
 }
 
 #cursor-follower {
@@ -327,5 +331,5 @@ nav > ul {
 }
 
 nav > ul > li > a:active {
-  background-color: red;
+  text-decoration: underline !important;
 }
