@@ -132,6 +132,7 @@ main {
 nav {
   font-size: 1.5rem;
   font-family: 'Inter', 'Helvetica', sans-serif;
+  font-weight: 500;
   list-style-type: none;
   color: white;
 }
@@ -227,6 +228,16 @@ nav > ul {
     }
   }
 }
+
+@keyframes blink {
+  from {
+    text-shadow: 0 0 2px white;
+  }
+  to {
+    text-shadow: 0 0 0 white;
+  }
+}
+
 
 #logo-container {
   width: 600px;
