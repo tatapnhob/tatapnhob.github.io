@@ -51,7 +51,7 @@ const clock = new THREE.Clock();
 
 const loader = new GLTFLoader();
 
-loader.load( 'src/ttphb-frame.glb', function(gltf: any) {
+loader.load( '/ttphb-frame.glb', function(gltf: any) {
 
   const object: THREE.Object3D = gltf.scene;
   scene.add(object);
