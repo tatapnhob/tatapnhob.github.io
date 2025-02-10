@@ -7,6 +7,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="cf-wrap">
     <div id='cursor-follower'></div>
   </div>
+  <p class="footer-note">(c) 2025 by Daniel T.</p>
   <main>
     <div id="logo-container">
       <div id="logo"></div>
@@ -30,7 +31,7 @@ var offset_x: number = 0;
 var offset_y: number = 0;
 
 const renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
-renderer.setSize( 500, 500 );
+renderer.setSize( 800, 800 );
 renderer.setAnimationLoop( animate );
 document.getElementById("logo-container")?.appendChild(renderer.domElement);
 
@@ -168,7 +169,7 @@ function handleMouseLeave(_e: MouseEvent) {
       cf.style.opacity = '0';
   
     }
-    
+
   }
 }
 
@@ -188,7 +189,7 @@ document.addEventListener("visibilitychange", function () {
 
 function advanceAutoFrameAnimation() {
 
-  if (automatic) {
+  if (automatic && !document.hidden) {
 
     offset_x = auto_offsets[auto_step * 2];
     offset_y = auto_offsets[auto_step * 2 + 1];

@@ -125,6 +125,7 @@ main {
   justify-content: center;
   align-items: center;
   gap: 10%;
+  overflow-x: hidden;
 }
 
 
@@ -150,7 +151,7 @@ nav > ul {
 }
 
 nav > ul > li {
-  padding-block: .4rem;
+  padding-block: .2rem;
   position: relative;
 }
 
@@ -224,8 +225,8 @@ nav > ul {
 }
 
 #logo-container {
-  width: 500px;
-  aspect-ratio: 1;
+  width: 600px;
+  height: 200px;
   position: relative;
 }
 
@@ -237,13 +238,15 @@ nav > ul {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  position: absolute;
+  position: relative;
   z-index: 10;
 }
 
 #logo-container canvas {
-  width: 100% !important;
-  height: 100% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 870px) {
@@ -258,12 +261,32 @@ nav > ul {
     margin-inline: 2rem;
   }
 
+  #logo-container canvas {
+    width: 500px !important;
+    height: 500px !important;
+  }
+
   #logo {
     width: 80%;
     left: 0;
     right: 0;
     margin: auto;
   }
+
+  nav {
+    font-size: 1.5em;
+  }
+
+  nav > ul > li {
+    text-decoration: underline !important;
+  }
+
+  .footer-note {
+    left: 50vw;
+    transform: translateX(-50%);
+    padding-inline: .5rem !important;
+  }
+
 }
 
 #cursor-follower {
@@ -284,4 +307,12 @@ nav > ul {
   height: 100svh;
   position: absolute;
   overflow: hidden;
+}
+
+.footer-note {
+  position: absolute;
+  bottom:2rem;
+  color:white;
+  padding-inline: 4rem;
+  padding-block: 1rem;
 }
