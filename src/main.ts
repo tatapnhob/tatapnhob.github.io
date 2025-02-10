@@ -7,7 +7,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="cf-wrap">
     <div id='cursor-follower'></div>
   </div>
-  <p class="footer-note">(c) 2025 by Daniel T.</p>
+  <p class="footer-note">(c) 2025 by Daniel T. </p>
   <main>
     <div id="logo-container">
       <div id="logo"></div>
@@ -18,7 +18,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <li><a href="#">projects</a></li>
         <li><a href="#">gallery</a></li>
         <li><a href="#">cv</a></li>
-        <li><a href="#" class="highlighted">contact me</a></li>
+        <li><a href="https://t.me/dantatarinov" class="highlighted">contact me</a></li>
         <li><a href="#">blog</a></li>
       </ul>
     </nav>

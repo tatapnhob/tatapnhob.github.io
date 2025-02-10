@@ -279,10 +279,15 @@ nav > ul {
 
   nav {
     font-size: 1.5em;
+    text-align: center;
   }
 
-  nav > ul > li {
-    text-decoration: underline !important;
+  nav > ul {
+    padding-inline: 0;
+  }
+
+  a.highlighted:not(:hover):not(:focus-within)::before {
+    display: none !important;
   }
 
   .footer-note {
