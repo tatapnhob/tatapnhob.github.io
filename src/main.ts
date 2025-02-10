@@ -4,6 +4,9 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+  <div class="cf-wrap">
+    <div id='cursor-follower'></div>
+  </div>
   <main>
     <div id="logo-container">
       <div id="logo"></div>
@@ -101,22 +104,46 @@ document.onmousemove = handleMouseMove;
 document.onmouseout = handleMouseLeave;
 
 function handleMouseMove(e: MouseEvent) {
+
+  //frames
+
   var x: number = e.pageX;
   var y: number = e.pageY;
 
   var parallax_intensity: number = 0.2;
 
-  x = (x - window.innerWidth / 2) / window.innerWidth;
-  y = (y - window.innerHeight / 2) / window.innerHeight;
+  var t_x = (x - window.innerWidth / 2) / window.innerWidth;
+  var t_y = (y - window.innerHeight / 2) / window.innerHeight;
 
-  offset_x = parallax_intensity * x;
-  offset_y = parallax_intensity * y;
+  offset_x = parallax_intensity * t_x;
+  offset_y = parallax_intensity * t_y;
+
+  //cursor follower
+
+  const cf = document.getElementById("cursor-follower");
+
+  if (cf != null) {
+    
+    cf.style.opacity = '1';
+
+    cf.style.top = (y - 300).toString() + 'px';
+    cf.style.left = (x - 300).toString() + 'px';
+
+  }
+
 
 }
 
 function handleMouseLeave(_e: MouseEvent) {
   offset_x = 0;
   offset_y = 0;
+
+  const cf = document.getElementById("cursor-follower");
+  if (cf && cf.style) {
+  
+    cf.style.opacity = '0';
+
+  }
 }
 
 function lerp(a: number, b: number, t: number) {
