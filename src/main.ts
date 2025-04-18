@@ -14,12 +14,12 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </div>
     <nav>
       <ul>
-        <li><a href="">about</a></li>
-        <li><a href="#">projects</a></li>
-        <li><a href="#">gallery</a></li>
-        <li><a href="#">cv</a></li>
+        <li><a href="" class="menu-link-disabled">about</a></li>
+        <li><a href="#" class="menu-link-disabled">projects</a></li>
+        <li><a href="#" class="menu-link-disabled">gallery</a></li>
+        <li><a href="/ttphb-portfolio.pdf">portfolio</a></li>
         <li><a href="https://t.me/dantatarinov" class="highlighted">contact me</a></li>
-        <li><a href="#">blog</a></li>
+        <li><a href="#" class="menu-link-disabled">blog</a></li>
       </ul>
     </nav>
   </main>

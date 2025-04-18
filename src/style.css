@@ -238,6 +238,9 @@ nav > ul {
   }
 }
 
+.menu-link-disabled {
+  color: gray !important;
+}
 
 #logo-container {
   width: 600px;
