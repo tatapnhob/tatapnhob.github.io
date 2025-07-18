@@ -7,7 +7,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="cf-wrap">
     <div id='cursor-follower'></div>
   </div>
-  <p class="footer-note">(c) 2025 by Daniel T. </p>
+  <!-- <p class="footer-note">(c) 2025 by Daniel T. </p> -->
   <main>
     <div id="logo-container">
       <div id="logo"></div>

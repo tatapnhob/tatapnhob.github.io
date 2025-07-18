@@ -111,8 +111,8 @@ button:focus-visible {
   min-height: 100svh;
   background-color: black;
   background-image: radial-gradient(
-    rgba(255, 255, 255, 0.18) 10%,
-    transparent 10%
+    rgba(255, 255, 255, 0.18) 5%,
+    transparent 5%
   );
   background-position: 0% 0%;
   background-size: 36px 36px;
@@ -277,6 +277,8 @@ nav > ul {
     width: 100%;
     max-width: 500px;
     margin-inline: 2rem;
+    height: 130px;
+    margin-block-end: 2rem;
   }
 
   #logo-container canvas {
@@ -289,6 +291,7 @@ nav > ul {
     left: 0;
     right: 0;
     margin: auto;
+    background-image: url(./ttphb-logo-condensed-no-border.svg); 
   }
 
   nav {
