@@ -137,7 +137,7 @@ nav > ul > li {
 
 nav > ul > li > a::before {
   content: '';
-  color: red;
+  border: 3px solid red;
   display: none;
   opacity: 0;
   position: absolute;
@@ -148,7 +148,7 @@ nav > ul > li > a::before {
   left: -1.8rem;
   width: 1.2rem;
   height: 1rem;
-  background-color: red;
+  /* background-color: red; */
   transition: opacity .2s linear;
 }
 
@@ -204,6 +204,7 @@ nav > ul {
       font-weight: bold;
       display: block;
       transform: translateX(2rem);
+      /* rotate: 5deg;  */
     }
   }
 }

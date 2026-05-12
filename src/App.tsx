@@ -8,6 +8,7 @@ import './App.css'
 // import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 import { Canvas } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
+import DottedBg from './DottedBg';
 
 function App() {
 
@@ -226,9 +227,10 @@ function App() {
 
   return (
     <>
-      <div className="cf-wrap">
+      {/* <div className="cf-wrap">
         <div id='cursor-follower'></div>
-      </div>
+      </div> */}
+      <DottedBg />
       {/* <p className="footer-note">(c) 2025 by Daniel T. </p> */}
       <main>
         <div id="logo-container">
@@ -236,8 +238,9 @@ function App() {
           <Canvas>
             <pointLight position={[2, 2, 2]} intensity={4} distance={100} />
             <pointLight position={[-2, -2, 2]} intensity={4} distance={100} />
-            <TtphbFrame offsetRef={offsetRef} />
-            <TtphbFrame scale={1.5} inverse offsetRef={offsetRef} />
+            <TtphbFrame offsetRef={offsetRef} scale={1} />
+            <TtphbFrame offsetRef={offsetRef} scale={1.5} inverse />
+            {/* <TtphbFrame scale={1.9} offsetRef={offsetRef} /> */}
           </Canvas>
           </div>
           <div id="logo"></div>

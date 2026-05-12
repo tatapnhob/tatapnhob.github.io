@@ -26,8 +26,8 @@ const TtphbFrame = ({ scale = 1, materialColor = 0xff0000, inverse = false, offs
     
     useFrame((_state, delta) => {
         if (meshRef.current && cursorFollowRotationRef.current) {
-            cursorFollowRotationRef.current.x = lerp(cursorFollowRotationRef.current.x, 3 * offsetRef.current.y * (inverse ? -1 : 1), Math.min(Math.max(5 * delta, 0), 1));
-            cursorFollowRotationRef.current.y = lerp(cursorFollowRotationRef.current.y, 3 * offsetRef.current.x * (inverse ? -1 : 1), Math.min(Math.max(5 * delta, 0), 1));
+            cursorFollowRotationRef.current.x = lerp(cursorFollowRotationRef.current.x, 2 * offsetRef.current.y * (inverse ? -1 : 1), Math.min(Math.max(5 * delta, 0), 1));
+            cursorFollowRotationRef.current.y = lerp(cursorFollowRotationRef.current.y, -2 * offsetRef.current.x * (inverse ? -1 : 1), Math.min(Math.max(5 * delta, 0), 1));
         
             meshRef.current.rotation.setFromVector3(new THREE.Vector3().addVectors(animRotationRef.current, cursorFollowRotationRef.current))
         }
